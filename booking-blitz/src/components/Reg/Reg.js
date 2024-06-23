@@ -14,7 +14,7 @@ export default function VerificationCode() {
     console.log(form);
   }
 
-  const instance = axios.create({baseURL:'http://localhost:5000'})
+  const instance = axios.create({baseURL:'https://blitzykt.ru:5000'})
 
   const registerHandler = async () => {
     try {

@@ -11,7 +11,7 @@ export default function Auth() {
     const [isRegistered, setIsRegistered] = useState(false);
     const { isVisible, setIsVisible } = useVisibility();
     const location = useLocation();
-    const instance = axios.create({baseURL:'http://localhost:5000'})
+    const instance = axios.create({baseURL:'https://blitzykt.ru:5000'})
 
     const [form, setForm] = useState({
         email: '',
