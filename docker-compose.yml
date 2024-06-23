@@ -1,0 +1,23 @@
+version: '3.8'
+name: 'booking-blitz'
+services:
+  blitz_api:
+    container_name: blitz_api
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    ports:
+      - '5000:5000'
+    volumes:
+      - ./api:/app
+      - /app/node_modules
+  blitz_client:
+    container_name: blitz_client
+    build:
+      context: ./booking-blitz
+      dockerfile: Dockerfile
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./booking-blitz:/app
+      - /app/node_modules
