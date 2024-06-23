@@ -11,7 +11,7 @@ body {
         font-weight: 600;
         font-style: normal;
         color: #FFBB00;
-        font-size: 52px;
+        font-size:calc(50px + 8 * (100vw - 320px) / 880);
 }
 
 .header-blitz2 {
@@ -22,7 +22,7 @@ body {
         font-weight: 600;
         font-style: normal;
         color: #FFBB00;
-        font-size: 52px;
+        font-size:calc(20px + 8 * (100px - 520px) / 880);
 }
 .header-blitz3 {
     position: absolute;
@@ -49,12 +49,6 @@ body {
     z-index: 10;
 }
 
-.flex-center img {
-    
-    margin-right: 100px;
-    width: 100%;
-    
-}
 
 button {
     border: 'none',
@@ -70,11 +64,12 @@ image {
     height: 40%;
     position: absolute;
     top: 30%;
-    right: 200px;
+    right: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1;
+
 }
 
 .flex-arena {
@@ -83,9 +78,32 @@ image {
     height: 40%;
     position: absolute;
     top: 30%;
-    left: 200px;
+    left: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1;
 }
+.club {
+    width: 300px;
+    height: auto ;
+
+    margin-right: 90px;
+}
+
+@media (max-width: 600px) {
+
+    .club {
+        top: 40%;
+        width: 230px;
+        height: auto;
+
+        
+    }
+    .flex-center {
+        flex-direction: column;
+        top: 35%;
+
+    }
+
+  }

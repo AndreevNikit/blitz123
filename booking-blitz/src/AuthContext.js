@@ -6,19 +6,11 @@ export const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
-    const instance = axios.create({
-        baseURL: 'https://blitzykt.ru',
-        headers: {
-            'Content-Type': 'application/json',
-            // Добавьте любые другие заголовки, если они необходимы
-        }
-    });
 
     useEffect(() => {
         const fetchCurrentUser = async () => {
             try {
-                const response = await instance.get('/api/users/current');
-
+                const response = await axios.get('https://blitzykt.ru/api/users/current');
                 setUser(response.data);
             } catch (error) {
                 console.error('Ошибка при получении текущего пользователя:', error);

@@ -6,15 +6,7 @@ body {
     overflow: hidden;
     font-weight: 200;
 }
-.container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    text-align: center;
-    margin-bottom: 110px;
-}
+
 h1 {
     font-size: 36px;
     color: #f9f002;

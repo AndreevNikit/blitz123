@@ -3,18 +3,10 @@ body {
     padding: 0;
     font-family: "Rajdhani", sans-serif;
     background: linear-gradient(135deg, #3a3a3a, #1f1f1f);
-
     overflow: hidden;
     font-weight: 200;
 }
-.container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    text-align: center;
-}
+
 h1 {
     font-size: 32px;
     color: #f9f002;

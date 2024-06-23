@@ -1,5 +1,6 @@
 import './Booking3.css'
 import React, {useState} from 'react';
+import axios from 'axios';
 
 export default function Booking3() {
         const [place, setPlace] = useState('');
@@ -21,6 +22,27 @@ export default function Booking3() {
       const handleTimeChange = (event) => {
         setselectedTime(event.target.value);
       }
+      const handleSubmit = async (event) => {
+        event.preventDefault();
+        if (!isFormComplete) return;
+
+        const bookingData = {
+            place,
+            selectedDate,
+            selectedTime,
+            quantity
+        };
+        
+
+        try {
+            const response = await axios.post('http://localhost:5000/api/book', bookingData);
+            console.log(response.data);
+            // Вы можете добавить код для уведомления пользователя об успешном бронировании
+        } catch (error) {
+            console.error('Error booking:', error);
+            // Обработка ошибки
+        }
+    };
         
         const isFormComplete = place && selectedDate && quantity && selectedTime;
     
@@ -31,11 +53,11 @@ export default function Booking3() {
                 <img src='../image/Cards1.png' alt="Gaming Setup"/>
             </div>
 
-            <form>
+            <form onSubmit={handleSubmit}>
                 <label for="place">Место</label>
                 <select id="place" value={place} onChange={handlePlaceChange}>
                     <option hidden>Выберите</option>
-                    <option value="maximum">Exclusive</option>
+                    <option value="exclusive">Exclusive</option>
                 </select>
                 <label for="date">Дата</label>
                 <input 

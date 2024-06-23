@@ -1,7 +1,7 @@
 
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import React, { Component, useState } from 'react';
+import React, { Component, useState, useContext} from 'react';
 import { Button, Fade } from 'react-bootstrap';
 import Headers from './components/header';
 import Buttons from './components/Buttons';
@@ -20,11 +20,16 @@ import { VisibilityProvider } from './context.js';
 import { useRoutes } from './routes.js';
 import admin from './components/admin/admin.js';
 
+
 const App = () => {
   const {login, logout, token, userID, isReady} = useAuth()
   const isLogin = !!token 
   const routes = useRoutes(isLogin)
+  const { user, loading } = useContext(AuthContext);
 
+  if (loading) {
+    return <div>Загрузка...</div>;
+  }
   return (
     <>
 
@@ -33,7 +38,7 @@ const App = () => {
     <VisibilityProvider>
     <div class='app-wrapper-content'>
       <Headers />
-      <Buttons />
+      
       
     </div>
     <div className='app-wrapper, box_2'>
@@ -52,6 +57,16 @@ const App = () => {
       </Routes>
       
     </div>
+    <div className='baton'>
+          <Buttons />
+    </div>
+    <div className="App">
+            {user && user.isAdmin ? (
+                <admin />
+            ) : (
+                <div>У вас нет доступа к этой странице</div>
+            )}
+        </div>
     </VisibilityProvider>
     </AuthContext.Provider>
     </>

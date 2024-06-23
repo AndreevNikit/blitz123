@@ -1,10 +1,3 @@
-body {
-    margin: 0;
-    padding: 0;
-    font-family: "Rajdhani", sans-serif;
-    font-style: normal;
-    font-size: 32px;
-}
 
 
 .profile img {
@@ -20,12 +13,7 @@ body {
     color: #FFBB00;
 }
 
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 200vh;
-}
+
 
 .profile {
     display: flex;
@@ -40,4 +28,18 @@ body {
 }
 
 
+
+@media (max-width: 600px) {
+    .profile img {
+        width: 100px;
+        height: 120px;
+        border-radius: 50%;
+        margin-right: 10px;
+        padding: 0px;
+        
+    }
+
+    
+
+  }
 

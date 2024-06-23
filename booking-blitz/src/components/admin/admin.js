@@ -1,46 +1,50 @@
-import React from "react";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import './admin.css';
 
-const admin = () => {
+const AdminPanel = () => {
+    const [bookings, setBookings] = useState([]);
+
+    useEffect(() => {
+        const fetchBookings = async () => {
+            try {
+                const response = await axios.get('https://blitzykt.ru/api/all');
+                setBookings(response.data);
+            } catch (error) {
+                console.error('Ошибка при загрузке бронирований:', error);
+            }
+        };
+
+        fetchBookings();
+    }, []);
+
     return (
-        <div className="container">
-            <div className="admin-page">
-                <h4>Просмотр брони</h4>
-                <form className="form form-login">
-                    <div>
-                        <div className="input-field col s12">
-                            <input 
-                            type="text"
-                            id="text"
-                            name="input"
-                            className="validate"
-                            />
-                            <label htmlFor="input">Место</label>
-                        </div>
-                    </div>
-                    <div className="row">
-                <button className="waves-effect waves-light btn white">
-                Добавить
-                </button>
-                    </div>
-                </form>
-                <h3>Занятые места</h3>
-                <div className="todos">
-                    <div className="row flex todos-item">
-                        <div className="col todos-num">1</div>
-                        <div className="col todos-text">text</div>
-                        <div className="col todos-buttons">
-                            <i class="material-icons green-text">check</i>
-                            <i class="material-icons orange-text">warning</i>
-                            <i class="material-icons red-text">delete</i>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div className="admin-container">
+            <h2>Админ Панель</h2>
+            <table class='table-container'>
+                <thead>
+                    <tr>
+                        <th>Место</th>
+                        <th>Дата</th>
+                        <th>Время</th>
+                        <th>Количество</th>
+                        <th>Email пользователя</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {bookings.map((booking) => (
+                        <tr key={booking._id}>
+                            <td>{booking.place}</td>
+                            <td>{booking.selectedDate}</td>
+                            <td>{booking.selectedTime}</td>
+                            <td>{booking.quantity}</td>
+                            <td>{booking.user && booking.user.email ? booking.user.email : 'Нет данных'}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
         </div>
-    )
+    );
+};
 
-
-}
-
-export default admin
+export default AdminPanel;

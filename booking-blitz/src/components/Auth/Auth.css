@@ -42,10 +42,11 @@ body {
 }
 .modal-content img {
     width: 200px;
-    margin-bottom: 10px;
+    
+
 }
 .modal-content h2 {
-    color: #ffcc00;
+    color: yellow;
     margin: 10px 0;
 }
 .modal-content input {

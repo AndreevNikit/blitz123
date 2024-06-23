@@ -2,7 +2,7 @@
     text-align: center;
     border: 3px solid #00FFFF; /* Цвет границы */
     width: 400px; /* Увеличена ширина контейнера */
-    margin: 0 auto; /* Выравнивание контейнера по центру */
+    margin: auto; /* Выравнивание контейнера по центру */
   }
 
 .verification-container form {
@@ -13,6 +13,9 @@
 
   .logo-container img {
     width: 200px;
+    position: relative;
+    left: 0%;
+
   }
   
   input[type="email"] {

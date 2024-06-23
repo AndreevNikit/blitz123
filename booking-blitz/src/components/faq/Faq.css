@@ -9,6 +9,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    height: 0 auto;   
+    font-size:calc(15px + 8 * (100vw - 320px) / 880);
 }
 
 .content {
@@ -16,6 +19,7 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
 }
 
 .address {
@@ -24,7 +28,7 @@ body {
     font-weight: 400;
     font-style: normal;
     color: #FFBB00;
-    font-size: 30px;
+
 }
 
 .addres {
@@ -33,16 +37,32 @@ body {
     font-family: "Rajdhani", sans-serif;
     font-style: normal;
     color: #FFBB00;
-    font-size: 35px;
+
 }
 
 .header {
-    position: absolute;
-    top: 10%;
-    left: 20%;
+    position: relative;
     font-family: "Rajdhani", sans-serif;
     font-weight: 600;
     font-style: normal;
     color: #FFBB00;
-    font-size: 52px;
+    font-size:calc(28px + 8 * (100vw - 320px) / 880);
+
 }
+
+/* Пример медиа-запроса для мобильных устройств */
+@media (max-width: 600px) {
+    .header {
+      font-size: 30px;
+    }
+    .addres {
+      font-size: 25px;
+    }
+    .address {
+        font-size: 15px;
+    }
+
+    
+
+  }
+  
