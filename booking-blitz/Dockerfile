@@ -8,8 +8,8 @@ RUN npm install
 
 COPY . .
 
-RUN npm run start
+RUN #npm run start
 
 EXPOSE 3440
 
-CMD ["npm", "run", "start"]
+CMD ["npm", "run", "start", "--prefix booking-blitz"]
