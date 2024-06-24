@@ -25,7 +25,7 @@ services:
       - /app/node_modules
     env_file:
       - .env
-  nginx:
+  brizl_nginx:
     image: macbre/nginx-brotli:1.19.6-http3
     volumes:
       - ./conf.d:/etc/nginx/conf.d
@@ -33,7 +33,7 @@ services:
     ports:
       - "${NGINX_PORT_HTTP}:80"
       - "${NGINX_PORT_HTTPS}:443"
-    container_name: nginx
+    container_name: brizl_nginx
     expose:
       - ${NGINX_PORT_HTTPS}
       - ${NGINX_PORT_HTTP}
