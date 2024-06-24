@@ -10,6 +10,6 @@ COPY . .
 
 RUN #npm run server
 
-EXPOSE 5000
+EXPOSE 2345
 
 CMD ["npm", "run", "server"]

@@ -10,6 +10,6 @@ COPY . .
 
 RUN #npm run start
 
-EXPOSE 3000
+EXPOSE 3440
 
 CMD ["npm", "run", "start"]

@@ -6,7 +6,7 @@ require('dotenv').config();
 
 
 const app = express()
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT || 2345
 
 const checkAuth = (req, res, next) => {
     // Проверка авторизации пользователя

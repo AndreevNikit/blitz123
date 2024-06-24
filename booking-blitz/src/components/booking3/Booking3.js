@@ -35,7 +35,7 @@ export default function Booking3() {
         
 
         try {
-            const response = await axios.post('http://localhost:5000/api/book', bookingData);
+            const response = await axios.post('https://blitzykt.ru/api/book', bookingData);
             console.log(response.data);
             // Вы можете добавить код для уведомления пользователя об успешном бронировании
         } catch (error) {
