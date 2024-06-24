@@ -10,6 +10,6 @@ COPY . .
 
 RUN #npm run start
 
-EXPOSE 3440
+EXPOSE 3000
 
-CMD ["npm", "run", "start", "--prefix booking-blitz"]
+CMD ["npm", "run", "start", ""]

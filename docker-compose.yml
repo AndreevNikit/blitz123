@@ -19,7 +19,7 @@ services:
       context: ./booking-blitz
       dockerfile: Dockerfile
     ports:
-      - '${CLIENT_PORT}:3440'
+      - '${CLIENT_PORT}:3000'
     volumes:
       - ./booking-blitz:/app
       - /app/node_modules
