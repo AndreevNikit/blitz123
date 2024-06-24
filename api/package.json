@@ -5,7 +5,6 @@
   "main": "server.js",
   "scripts": {
     "server": "nodemon server.js",
-    "client": "npm run start --prefix booking-blitz",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "keywords": [],
